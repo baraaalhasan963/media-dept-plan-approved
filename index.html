@@ -315,6 +315,8 @@
 
     @media (max-width: 900px) {
       .executive-topbar {
+        position: sticky;
+        top: 0;
         padding: 12px 18px;
         min-height: auto;
         display: flex;
@@ -337,6 +339,9 @@
         max-width: 190px;
         filter: none !important;
         box-shadow: none !important;
+      }
+      .search-modal-backdrop {
+        top: 76px;
       }
     }
 
@@ -918,12 +923,27 @@
        جداول البيانات التشغيلية والمؤشرات (Executive Tables)
        ========================================================================== */
     .table-container {
-      margin: 28px 0;
+      margin: 24px 0;
       border-radius: var(--radius-sm);
-      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid rgba(21, 65, 58, 0.15);
       box-shadow: var(--shadow-sm);
       background: #fff;
+    }
+
+    .table-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+      background: rgba(21, 65, 58, 0.05);
+      border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+      background: var(--gold-primary);
+      border-radius: 4px;
     }
 
     .table-caption-bar {
@@ -948,6 +968,7 @@
 
     .executive-table {
       width: 100%;
+      min-width: 580px;
       border-collapse: collapse;
       text-align: right;
       font-size: 13.5px;
@@ -977,6 +998,10 @@
       background-color: var(--gold-pale);
     }
 
+    .indicators-table {
+      min-width: 620px;
+    }
+
     .indicators-table th,
     .indicators-table td {
       text-align: center;
@@ -985,6 +1010,10 @@
     .indicators-table th:first-child,
     .indicators-table td:first-child {
       text-align: right;
+    }
+
+    .outputs-table {
+      min-width: 580px;
     }
 
     .outputs-table th,
@@ -1395,6 +1424,247 @@
       border-top: 1px solid rgba(21, 65, 58, 0.1);
       font-size: 12px;
       color: var(--text-subtle);
+    }
+
+    /* ==========================================================================
+       التحسينات الشاملة للأجهزة المحمولة والشاشات الصغيرة (Mobile Responsiveness)
+       تضمن عدم حدوث أي قص أو اقتطاع وتوفر تجربة قراءة وتصفح انسيابية ومتقنة
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .document-wrapper {
+        margin: 14px auto 36px auto;
+        padding: 0 10px;
+      }
+
+      .content-body {
+        padding: 28px 18px;
+      }
+
+      .cover-section {
+        padding-bottom: 36px;
+        margin-bottom: 36px;
+      }
+
+      .plan-section {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .document-wrapper {
+        margin: 10px auto 28px auto;
+        padding: 0 6px;
+      }
+
+      .content-body {
+        padding: 22px 14px;
+      }
+
+      .watermark-emblem {
+        width: 320px;
+        height: 320px;
+      }
+
+      .cover-header-bar {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+      }
+
+      .cover-logo-wrapper {
+        justify-content: center;
+      }
+
+      .cover-logo-img {
+        height: 62px;
+      }
+
+      .gov-hierarchy {
+        text-align: center;
+        font-size: 12.5px;
+      }
+
+      .gov-hierarchy span {
+        font-size: 13.5px;
+      }
+
+      .cover-badge-row {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .cover-main-title {
+        font-size: 23px;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .cover-sub-title {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 22px;
+      }
+
+      .cover-accent-line {
+        margin: 0 auto 24px auto;
+      }
+
+      .cover-meta-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .toc-section {
+        padding: 20px 14px;
+        margin-bottom: 32px;
+      }
+
+      .toc-title {
+        font-size: 17px;
+      }
+
+      .section-header-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 14px;
+        border-right-width: 4px;
+        margin-bottom: 18px;
+      }
+
+      .section-pill-num {
+        font-size: 13px;
+        padding: 2px 10px;
+      }
+
+      .section-title-wrap h2 {
+        font-size: 17px;
+        line-height: 1.4;
+      }
+
+      .section-title-wrap .section-subtitle {
+        font-size: 12.5px;
+        line-height: 1.5;
+      }
+
+      .sub-section-card {
+        padding: 16px 14px;
+        margin-bottom: 16px;
+      }
+
+      .sub-section-title {
+        font-size: 15px;
+      }
+
+      .preamble-box {
+        padding: 14px 16px;
+        font-size: 13.5px;
+        margin-bottom: 20px;
+      }
+
+      .workflow-cycle-box {
+        padding: 14px 12px;
+      }
+
+      .workflow-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .workflow-step-card {
+        padding: 10px 6px;
+      }
+
+      .workflow-step-title {
+        font-size: 12px;
+      }
+
+      .interactive-callout-box {
+        padding: 12px 14px !important;
+        font-size: 13px !important;
+      }
+
+      .sign-box {
+        padding: 16px 12px;
+        min-height: 140px;
+      }
+
+      .distribution-box {
+        padding: 14px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .executive-topbar {
+        padding: 10px 12px;
+      }
+
+      .topbar-full-logo {
+        height: 34px;
+        max-width: 140px;
+      }
+
+      .btn-action {
+        padding: 6px 10px;
+        font-size: 11.5px;
+        gap: 5px;
+      }
+
+      .topbar-actions {
+        gap: 6px;
+      }
+
+      .topbar-center-title {
+        font-size: 12.5px;
+        margin-top: 8px;
+        padding: 4px 8px;
+      }
+
+      .document-wrapper {
+        padding: 0 4px;
+        margin: 8px auto 24px auto;
+      }
+
+      .content-body {
+        padding: 16px 10px;
+      }
+
+      .official-paper {
+        border-radius: var(--radius-sm);
+        border: none;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .cover-main-title {
+        font-size: 19.5px;
+      }
+
+      .executive-table th, 
+      .executive-table td {
+        padding: 9px 10px;
+        font-size: 12.5px;
+      }
+
+      .bullet-list li {
+        font-size: 13.5px;
+        padding-right: 18px;
+      }
+
+      .bullet-list li::before {
+        right: 2px;
+        top: 9px;
+      }
+
+      .table-caption-bar {
+        padding: 10px 12px;
+        font-size: 12.5px;
+      }
     }
 
     /* ==========================================================================
@@ -2263,7 +2533,7 @@
           </div>
 
           <!-- لفتة لافتة وطريفة بين 3.1 و 3.2 -->
-          <div style="background: linear-gradient(135deg, rgba(197, 155, 39, 0.09) 0%, rgba(21, 65, 58, 0.04) 100%); border: 1.5px dashed rgba(197, 155, 39, 0.5); border-radius: var(--radius-md); padding: 14px 20px; margin: 18px 0 22px 0; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 10px rgba(197, 155, 39, 0.06);">
+          <div class="interactive-callout-box" style="background: linear-gradient(135deg, rgba(197, 155, 39, 0.09) 0%, rgba(21, 65, 58, 0.04) 100%); border: 1.5px dashed rgba(197, 155, 39, 0.5); border-radius: var(--radius-md); padding: 14px 20px; margin: 18px 0 22px 0; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 10px rgba(197, 155, 39, 0.06);">
             <div style="width: 36px; height: 36px; border-radius: 50%; background: #FFFFFF; border: 1px solid rgba(197, 155, 39, 0.35); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
               ✨
             </div>
