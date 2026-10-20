@@ -54,87 +54,75 @@
       --radius-lg: 18px;
     }
 
-    /* الخط الرسمي المعتمد: GHROOB مع موازنة دقيقة للأوزان لمنع التكتل وضمان أعلى درجات مقروئية النصوص */
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Light'), local('Ghroob-Light'), url('assets/fonts/itfGhroobArabic-Light.otf') format('opentype');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* نصوص الفقرات والقراءة العادية (وزن 400): استخدام وزن Light لتظل عيون الحروف مفتوحة ومريحة للقراءة */
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Light'), local('Ghroob-Light'), url('assets/fonts/itfGhroobArabic-Light.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* الأوزان شبه العريضة والشارات (وزن 500 و 600): استخدام Regular لبروز معتدل وأنيق */
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Regular'), local('Ghroob-Regular'), local('Ghroob'), url('assets/fonts/itfGhroobArabic-Regular.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Regular'), local('Ghroob-Regular'), local('Ghroob'), url('assets/fonts/itfGhroobArabic-Regular.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* العناوين والكلمات الدلالية البارزة (وزن 700): استخدام Medium لتفادي التسميك المفرط */
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Medium'), local('Ghroob-Medium'), url('assets/fonts/itfGhroobArabic-Medium.otf') format('opentype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* العناوين الكبرى والأرقام الإحصائية (وزن 800 و 900): استخدام Bold بدلاً من ExtraBold لتفادي الحروف المصمتة */
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Bold'), local('Ghroob-Bold'), url('assets/fonts/itfGhroobArabic-Bold.otf') format('opentype');
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'GHROOB';
-      src: local('itfGhroobArabic-Bold'), local('Ghroob-Bold'), url('assets/fonts/itfGhroobArabic-Bold.otf') format('opentype');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
-
+    /* ==========================================================================
+       الخط الرسمي المعتمد: Cairo
+       خط طباعي عصري رفيع المستوى يتميز بوضوح استثنائي وتوازن بصري مثالي للخطط والتقارير الرسمية
+       ========================================================================== */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'GHROOB', 'Ghroob', 'غروب', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.95;
-      font-size: 15.5px;
-      font-weight: 400;
-      letter-spacing: -0.01em;
+      line-height: 1.88;
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: normal;
       overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* موازنة الأوزان والدرجات اللونية لتعزيز أناقة المحتوى ومقروئيته */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 800;
+      color: var(--olive-deep);
     }
 
     strong, b {
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--olive-deep);
+    }
+
+    /* تحسين عرض الفقرات والنصوص التحريرية لتظهر بتوزيع بصري متزن ومريح للقراءة */
+    p {
+      line-height: 1.88;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #1F3430;
+      text-align: justify;
+      text-justify: inter-word;
+      margin-bottom: 14px;
+    }
+
+    .sub-section-card p,
+    .eval-section-block p,
+    .official-paper p {
+      line-height: 1.88 !important;
+      font-size: 14.5px !important;
+      color: #1F3430 !important;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .sub-section-card p:last-child,
+    .eval-section-block p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .bullet-list li,
+    .eval-priority-list li {
+      line-height: 1.82;
+      font-size: 14.5px;
+      color: #1F3430;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     button, input, select, textarea {
