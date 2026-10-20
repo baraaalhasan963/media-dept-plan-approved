@@ -873,46 +873,47 @@
       color: var(--olive-deep);
     }
 
-    /* قوائم العناصر: تحويلها إلى بطاقات مصغرة مريحة بصرياً */
+    /* قوائم العناصر: تصميم تنفيذي رسمي منسجم ومريح للقراءة (دون إطارات صناديق مشتتة) */
     .bullet-list {
       list-style: none;
       padding-right: 0;
       margin: 14px 0 18px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
+      background: rgba(21, 65, 58, 0.018);
+      border: 1px solid rgba(21, 65, 58, 0.08);
+      border-radius: 10px;
+      padding: 6px 18px;
     }
 
     .bullet-list li {
       position: relative;
-      padding: 11px 16px 11px 36px;
-      padding-right: 36px;
+      padding: 11px 24px 11px 8px;
       margin-bottom: 0;
-      font-size: 14px;
+      font-size: 14.5px;
       color: #243834;
-      line-height: 1.82;
-      background: rgba(21, 65, 58, 0.02);
-      border: 1px solid rgba(21, 65, 58, 0.08);
-      border-radius: 8px;
+      line-height: 1.85;
       text-align: right;
-      transition: all 0.2s ease;
+      border-bottom: 1px dashed rgba(21, 65, 58, 0.09);
+      transition: background 0.15s ease;
+    }
+
+    .bullet-list li:last-child {
+      border-bottom: none;
     }
 
     .bullet-list li:hover {
-      background: rgba(197, 155, 39, 0.04);
-      border-color: rgba(197, 155, 39, 0.25);
+      background: rgba(197, 155, 39, 0.035);
     }
 
     .bullet-list li::before {
       content: "";
       position: absolute;
-      right: 14px;
-      top: 18px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+      right: 4px;
+      top: 19px;
+      width: 7px;
+      height: 7px;
       background: var(--gold-primary);
-      box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.2);
+      border-radius: 2px;
+      transform: rotate(45deg);
     }
 
     /* كتل ومحتويات التقييم العام (1.6) */
@@ -1781,14 +1782,21 @@
         font-size: 12.5px;
       }
 
+      .bullet-list {
+        padding: 4px 12px;
+      }
+
       .bullet-list li {
-        font-size: 13.5px;
-        padding-right: 18px;
+        font-size: 13.5px !important;
+        padding: 10px 20px 10px 4px !important;
+        line-height: 1.78 !important;
       }
 
       .bullet-list li::before {
-        right: 2px;
-        top: 9px;
+        right: 3px !important;
+        top: 17px !important;
+        width: 6px !important;
+        height: 6px !important;
       }
 
       .table-caption-bar {
