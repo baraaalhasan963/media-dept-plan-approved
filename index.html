@@ -782,63 +782,137 @@
       text-align: justify;
     }
 
-    /* البنود الفرعية */
+    .section-container,
+    .section-header-banner,
+    .sub-section-card,
+    .eval-section-block {
+      scroll-margin-top: 85px;
+    }
+
+    /* ==========================================================================
+       البنود الفرعية - تصميم مؤسسي فاخر يمنع الرتابة ويوفر قراءة ممتعة ومتزنة
+       ========================================================================== */
     .sub-section-card {
       background: var(--surface-white);
-      border: var(--border-light);
-      border-radius: var(--radius-sm);
-      padding: 22px 24px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease;
+      border: 1px solid rgba(21, 65, 58, 0.12);
+      border-top: 3.5px solid var(--olive-dark);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 18px rgba(21, 65, 58, 0.04);
+      transition: all 0.25s ease;
+      position: relative;
     }
 
     .sub-section-card:hover {
-      border-color: rgba(21, 65, 58, 0.25);
+      box-shadow: 0 8px 26px rgba(21, 65, 58, 0.09);
+      border-color: rgba(21, 65, 58, 0.22);
+      border-top-color: var(--gold-primary);
     }
 
     .sub-section-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
-      color: var(--olive-dark);
+      color: var(--olive-deep);
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(21, 65, 58, 0.08);
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid rgba(21, 65, 58, 0.08);
     }
 
     .sub-section-num {
+      background: var(--gold-pale);
+      border: 1.5px solid var(--gold-primary);
       color: var(--gold-deep);
       font-weight: 900;
-      font-size: 14px;
+      font-size: 13px;
+      padding: 2px 10px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    /* تحسين عرض الفقرات والنصوص التحريرية لمنع الرتابة والملل */
+    .sub-section-card p,
+    .eval-section-block p,
+    .preamble-box p {
+      font-size: 14.5px !important;
+      line-height: 1.88 !important;
+      color: #243834 !important;
+      text-align: right !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* الفقرة التمهيدية الأولى داخل كل كرت: إبرازها كمدخل تنفيذي رشيق */
+    .sub-section-card > p:first-of-type {
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      color: var(--olive-deep) !important;
+      background: linear-gradient(to left, rgba(21, 65, 58, 0.035) 0%, transparent 100%);
+      border-right: 3.5px solid var(--gold-primary);
+      padding: 10px 14px 10px 10px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 18px !important;
+    }
+
+    /* فقرات الأهداف والمخرجات المستهدفة الأخيرة */
+    .sub-section-card > p:last-child {
+      background: linear-gradient(135deg, rgba(21, 65, 58, 0.03) 0%, rgba(197, 155, 39, 0.04) 100%);
+      border: 1px dashed rgba(21, 65, 58, 0.18);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 16px !important;
+      margin-bottom: 0 !important;
+      position: relative;
+    }
+
+    .sub-section-card > p:last-child strong {
+      color: var(--olive-deep);
+    }
+
+    /* قوائم العناصر: تحويلها إلى بطاقات مصغرة مريحة بصرياً */
     .bullet-list {
       list-style: none;
       padding-right: 0;
-      margin: 10px 0 14px 0;
+      margin: 14px 0 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
     }
 
     .bullet-list li {
       position: relative;
-      padding-right: 22px;
-      margin-bottom: 10px;
+      padding: 11px 16px 11px 36px;
+      padding-right: 36px;
+      margin-bottom: 0;
       font-size: 14px;
-      color: #2D403C;
-      line-height: 1.75;
+      color: #243834;
+      line-height: 1.82;
+      background: rgba(21, 65, 58, 0.02);
+      border: 1px solid rgba(21, 65, 58, 0.08);
+      border-radius: 8px;
+      text-align: right;
+      transition: all 0.2s ease;
+    }
+
+    .bullet-list li:hover {
+      background: rgba(197, 155, 39, 0.04);
+      border-color: rgba(197, 155, 39, 0.25);
     }
 
     .bullet-list li::before {
       content: "";
       position: absolute;
-      right: 4px;
-      top: 11px;
-      width: 7px;
-      height: 7px;
+      right: 14px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.2);
     }
 
     /* كتل ومحتويات التقييم العام (1.6) */
@@ -855,53 +929,66 @@
     }
 
     .eval-block-title {
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 15.5px;
+      font-weight: 800;
       color: var(--olive-deep);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      background: linear-gradient(to left, rgba(21, 65, 58, 0.04) 0%, transparent 100%);
+      border-right: 3.5px solid var(--gold-primary);
+      padding: 8px 14px;
+      border-radius: 0 6px 6px 0;
     }
 
     .eval-block-title::before {
-      content: "";
-      width: 4px;
-      height: 16px;
-      background: var(--gold-primary);
-      border-radius: 2px;
-      display: inline-block;
+      display: none;
     }
 
     .eval-priority-list {
       list-style: none;
       counter-reset: priority-counter;
       padding-right: 0;
-      margin: 14px 0;
+      margin: 16px 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .eval-priority-list li {
       counter-increment: priority-counter;
       position: relative;
-      padding-right: 34px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      color: #2D403C;
+      padding: 13px 18px 13px 48px;
+      padding-right: 50px;
+      margin-bottom: 0;
+      font-size: 14.5px;
+      color: #243834;
       line-height: 1.85;
+      background: rgba(21, 65, 58, 0.02);
+      border: 1px solid rgba(21, 65, 58, 0.09);
+      border-radius: 8px;
+      text-align: right;
+      transition: all 0.2s ease;
+    }
+
+    .eval-priority-list li:hover {
+      background: rgba(197, 155, 39, 0.04);
+      border-color: rgba(197, 155, 39, 0.25);
     }
 
     .eval-priority-list li::before {
       content: counter(priority-counter);
       position: absolute;
-      right: 0;
-      top: 3px;
-      width: 22px;
-      height: 22px;
+      right: 14px;
+      top: 14px;
+      width: 24px;
+      height: 24px;
       background: var(--gold-pale);
-      border: 1px solid rgba(197, 155, 39, 0.4);
+      border: 1.5px solid var(--gold-primary);
       color: var(--gold-deep);
-      font-weight: 800;
-      font-size: 12px;
+      font-weight: 900;
+      font-size: 13px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1518,6 +1605,39 @@
         font-size: 17px;
       }
 
+      .topbar-center-title {
+        position: static !important;
+        transform: none !important;
+        font-size: 13px !important;
+        text-align: center !important;
+        width: 100% !important;
+        order: 3 !important;
+        margin-top: 8px !important;
+        white-space: normal !important;
+      }
+
+      body, p, .sub-section-card p, .eval-section-block p, .preamble-box p, .bullet-list li {
+        text-align: right !important;
+        text-justify: auto !important;
+        font-size: 13.5px !important;
+        line-height: 1.8 !important;
+      }
+
+      .sub-section-card > p:first-of-type {
+        font-size: 14px !important;
+        padding: 8px 12px 8px 8px !important;
+        line-height: 1.75 !important;
+      }
+
+      .content-body {
+        padding: 24px 14px !important;
+      }
+
+      .sub-section-card {
+        padding: 18px 14px !important;
+        border-radius: 10px !important;
+      }
+
       .section-header-banner {
         flex-direction: column;
         align-items: flex-start;
@@ -1525,6 +1645,27 @@
         padding: 12px 14px;
         border-right-width: 4px;
         margin-bottom: 18px;
+        scroll-margin-top: 105px;
+      }
+
+      .section-container,
+      .sub-section-card,
+      .eval-section-block {
+        scroll-margin-top: 105px;
+      }
+
+      /* تحسين جداول المخرجات والمؤشرات على الشاشات الصغيرة */
+      .outputs-table {
+        min-width: 460px !important;
+      }
+
+      .outputs-table th, .outputs-table td {
+        padding: 8px 6px !important;
+        font-size: 12px !important;
+      }
+
+      .outputs-table td:nth-child(3) {
+        font-size: 14px !important;
       }
 
       .section-pill-num {
@@ -1911,7 +2052,7 @@
               شهد عمل قسم الإعلام في اتحاد الطلبة بجامعة حمص خلال العام السابق والعطلة الصيفية توسعاً في نطاق المسؤوليات والمهام، شمل إدارة الحضور الإعلامي المركزي للاتحاد، والإشراف على إعداد المطبوعات والمواد التعريفية المتنوعة للمؤسسة، ومتابعة عمل المكاتب الإعلامية في الهيئات الطلابية، إلى جانب إعداد خطط واستراتيجيات العمل الإعلامي والإشراف على تنفيذها وتطوير آلياتها بما يتناسب مع احتياجات العمل ومتطلباته.
             </p>
             <p style="font-size: 14px; color: #2D403C; line-height: 1.85; margin-bottom: 12px;">
-              وتوزعت الجهود التنفيذية للقسم بين إدارة المنصات الإعلامية الرسمية للاتحاد ومتابعة محتواها، وتنسيق التغطيات والأنشطة، والإشراف على الأعمال الإعلامية المرتبطة بقطاعات الاتحاد المختلفة، ومتابعة المسارات والمشاريع ذات الصلة، بما فيها نادي <strong>Fox Media</strong> ودليل التخصص الجامعي. كما شملت المهام التنسيق والتواصل مع الجهات الإعلامية الخارجية، وفي مقدمتها الجهات الإعلامية في الجامعة والمحافظة، فضلاً عن المساهمة في النشر والتنسيق الإعلامي عبر صفحات اتحاد طلبة سوريا، بما يعزز تكامل العمل الإعلامي وتبادل المحتوى بين الجهات المعنية.
+              وتوزعت الجهود التنفيذية للقسم بين إدارة المنصات الإعلامية الرسمية للاتحاد ومتابعة محتواها، وتنسيق التغطيات والأنشطة، والإشراف على الأعمال الإعلامية المرتبطة بقطاعات الاتحاد المختلفة، ومتابعة المسارات والمشاريع ذات الصلة، بما فيها نادي <strong>Focus Media</strong> ودليل التخصص الجامعي. كما شملت المهام التنسيق والتواصل مع الجهات الإعلامية الخارجية، وفي مقدمتها الجهات الإعلامية في الجامعة والمحافظة، فضلاً عن المساهمة في النشر والتنسيق الإعلامي عبر صفحات اتحاد طلبة سوريا، بما يعزز تكامل العمل الإعلامي وتبادل المحتوى بين الجهات المعنية.
             </p>
             <p style="font-size: 14px; color: #2D403C; line-height: 1.85; margin-bottom: 12px;">
               وعلى الصعيد التنظيمي والإداري، عمل القسم على إعداد هيكلية جديدة لتنظيم مهامه وتوزيع مسؤولياته، بالتوازي مع استقطاب أعضاء جدد إلى الفريق وإعادة تنظيم تشكيلته وفقاً لمتطلبات العمل. كما جرى تفعيل أدوات مخصصة لإدارة المهام وتوزيعها ومتابعة تنفيذها، وإعداد أدلة وملفات مرجعية تتعلق بسياسات العمل وآلياته، بهدف توحيد الإجراءات وتوضيح المسؤوليات وتوفير مرجعيات تساعد الفريق على أداء مهامه بصورة أكثر تنظيماً واستمرارية.
